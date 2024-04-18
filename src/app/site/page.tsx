@@ -14,14 +14,11 @@ import { Check } from 'lucide-react'
 import Link from 'next/link'
 
 export default async function Home() {
-  // const prices = await stripe.prices.list({
-  //   product: process.env.NEXT_PLURA_PRODUCT_ID,
-  //   active: true,
-  // })
-
-  const prices = {
-    data: [12, 34, 56]
-  }
+  const prices = await stripe.prices.list({
+    product: process.env.NEXT_PLURA_PRODUCT_ID,
+    active: true,
+  })
+  
   return (
     <main className="">
       <section className="h-full w-full md:pt-44 mt-[-70px] relative flex items-center justify-center flex-col ">
@@ -52,7 +49,7 @@ export default async function Home() {
           ready to commit you can get started for free.
         </p>
         <div className="flex  justify-center gap-4 flex-wrap mt-6">
-          {/* {prices.data.map((card) => (
+          {prices.data.map((card) => (
             //WIP: Wire up free product from stripe
             <Card
               key={card.nickname}
@@ -111,7 +108,7 @@ export default async function Home() {
                 </Link>
               </CardFooter>
             </Card>
-          ))} */}
+          ))}
           <Card className={clsx('w-[300px] flex flex-col justify-between')}>
             <CardHeader>
               <CardTitle
