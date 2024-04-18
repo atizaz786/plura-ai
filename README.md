@@ -27,12 +27,7 @@ This project is a comprehensive SaaS application designed to streamline website 
 ### Prerequisites
 
 - Node.js
-- Bun
+- Vercel
 - MySQL
 - Stripe account
 
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://yourgithubrepo.com/yourproject.git
